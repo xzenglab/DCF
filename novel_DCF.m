@@ -196,22 +196,6 @@ ScoreMatrix = features * W' * H * col_features';
 % save 'novel_DCF.mat' 'ScoreMatrix'
 save 'novel_DCF_UB.mat' 'ScoreMatrix'
 
-% scoreMatrixFilename = sprintf('node2vec_ScoreMatrix_alpha=%.2f_lambda=%.2f.mat',alpha,lambda);
-% save(scoreMatrixFilename,'ScoreMatrix');
-%load('splitsUniform.mat');
-%cdf_rates = cdf(full(splits{1}), ScoreMatrix, 100) ;
-%rates = recall(full(splits{1}), ScoreMatrix, 100) .*100 ;
-%pres = precision(full(splits{1}), ScoreMatrix, 100) .*100 ;
-%for s_index = [2,3]
-%    cdf_rates = cdf(full(splits{s_index}), ScoreMatrix, 100) + cdf_rates;
-%    rates = recall(full(splits{s_index}), ScoreMatrix, 100) .*100 + rates;
-%    pres = precision(full(splits{s_index}), ScoreMatrix, 100) .*100 + pres;
-%cdf_rates = cdf_rates/3;
-%rates = rates/3;
-%pres = pres/3;
-%x = fname(strfind(fname,'/') + 1:end);
-%name = sprintf('cdf%d_%s',randi(10000),x);
-%send_mail_upon_finished('node2vec ScoreMatrix got',sprintf('lambda %.3f alpha %.3f %s cdf best score=%.4f AUPRC=%.4f,save at %s',lambda, alpha, fname,cdf_rates(100), trapz(rates(1:100), pres(1:100)),name) , '18850544602@163.com');
-%save(name, 'fname','cdf_rates', 'rates', 'pres');
+
 toc
 end
