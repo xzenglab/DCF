@@ -9,4 +9,4 @@ This repository contains supplementary material for Deep collaborative filtering
 - You can run code novel_eval.m to get results for novel disease evaluation. Other situations need to modify manually.
 
 # Data Available
-- You can download data from (IMC)[http://bigdata.ices.utexas.edu/project/gene-disease/]
+- You can download data from [Inductive matrix completion for predicting gene-disease associations](http://bigdata.ices.utexas.edu/project/gene-disease/ "IMC")
