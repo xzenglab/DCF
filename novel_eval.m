@@ -45,22 +45,22 @@ try
     plot(x, novelrate_IMC(1:100), '-','LineWidth',lineWidth,'Color',[0.23921568627451 0.43921568627451 0.8],'linesmoothing','on');
     
     % plot DCF
-%     load('ScoreMatrix_DCF_novel_alpha=0.020_lambda=0.000002.mat');
+%     load('ScoreMatrix_DCF_novel_alpha.mat');
 %     novelrate_DCF = recall(full(test1), ScoreMatrix, 100);
 %     plot(x, novelrate_DCF(1:100), 'k-','LineWidth',lineWidth);
     
     % plot DCF-UB
-%     load('ScoreMatrix_DCF-UB_novel_alpha=0.020_lambda=0.000002.mat')
+%     load('ScoreMatrix_DCF-UB_novel.mat')
 %     novelrate_DCF_UB = recall(full(test1), ScoreMatrix, 100);
 %     plot(x, novelrate_DCF_UB(1:100), 'r-','LineWidth',lineWidth);
     
      % plot DCF-UB with STRING
-    load('ScoreMatrix_DCF-UB_novel_with_STRING_alpha=0.020_lambda=0.000002.mat');
+    load('ScoreMatrix_DCF-UB_novel_with_STRING');
     novelrate_DCF_UB_with_STRING = recall(full(test1), ScoreMatrix, 100) .* 100;
     plot(x, novelrate_DCF_UB_with_STRING(1:100), '-','LineWidth', lineWidth,'Color', [0.827450980392157 0.341176470588235 0.341176470588235],'linesmoothing','on');
 
     % plot DCF with STRING
-    load('ScoreMatrix_DCF_novel_with_STRING_alpha=0.020_lambda=0.000002.mat');
+    load('ScoreMatrix_DCF_novel_with_STRING');
     novelrate_DCF_with_STRING = recall(full(test1), ScoreMatrix, 100) .* 100;
     plot(x, novelrate_DCF_with_STRING(1:100), '-','LineWidth',lineWidth,'Color',[1 1 1]);
     
@@ -77,6 +77,8 @@ try
 
 catch ME 
     rethrow(ME)
-	send_mail_upon_finished('something wroing during train or evaluation', ME.message, '18850544602@163.com');
+   	disp('Error');
+    	% please enter create you own check conditions .
+	% send_mail_upon_finished('something wroing during train or evaluation', ME.message, 'your email address');
 	
 end
