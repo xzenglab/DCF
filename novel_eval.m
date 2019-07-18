@@ -1,19 +1,25 @@
 % eval on katz and catapult 
 % eval cdf of katz
+
+
+
+
 try
+    % following is the novel disease-gene matrix of novel disease, you can change it according your need
     load('novel_testing2014.mat');
     load('novel_training.mat');
     test1 = novel_testing2014 - novel_training;
     test1(test1 == -1) = 0;
 %   load('emerge2014.mat');
 %     load('emerge2014.mat');
+
+%    here is the calling of different model and save the result
 %     catapult_novel(1,0,9,10,10);
 %     catapult(1,0,9,10,30);
 	% katz_novel(1);
 % 	load('ScoreMatrix_Katz_novel.mat')
 % 	novelrate_katz = cdf(full(emerge2014), ScoreMatrix_KA, 100);
 % 	save 'novelrate_katz.mat' 'novelrate_katz'
-% 	send_mail_upon_finished('evaluation of katz novel finished', 'finished','18850544602@163.com'); 
 
     % eval cdf of catapult
 	% catapult_novel(1,0,9,10,30);
@@ -27,6 +33,10 @@ try
     box on;
     set(gcf, 'position', [0 0 1200 900]);
     lineWidth = 2;
+    
+    % here you'd better obtain result of different models and load it here. 
+    % And you could call 'recall', 'precision', 'cdf' to get the score of model under different metric to plot the result likewise following.
+    
     
     % plot Katz 
     load('ScoreMatrix_Katz_STRING_novel.mat');
@@ -68,8 +78,8 @@ try
     
     % legend and save
     legend( 'Katz','Catapult', 'IMC', 'DCF-UB', 'DCF','Location','best','EdgeColor','w');
-	save('novelrate_recall_all.mat','novelrate_catapult','novelrate_katz', 'novelrate_IMC','novelrate_DCF_with_STRING', 'novelrate_DCF_UB_with_STRING');
-	send_mail_upon_finished('evaluation for novel diseases finished', 'finished', '18850544602@163.com');
+    save('novelrate_recall_all.mat','novelrate_catapult','novelrate_katz', 'novelrate_IMC','novelrate_DCF_with_STRING', 'novelrate_DCF_UB_with_STRING');
+	
     set(axes1,'FontSize',12,'LineWidth',1.5,'TickLength',[0 0],...
     'TitleFontSizeMultiplier',0.01,'TitleFontWeight','normal');
     xlabel('Number of genes looked at');
