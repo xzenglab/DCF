@@ -6,7 +6,10 @@ DCF operates on large collections of heterogeneous data sets, such as gene expre
 This repository contains supplementary material for Deep collaborative filtering for prediction of disease genes.
 
 ## Usage 
-- You can run code novel_eval.m to get results for novel disease evaluation. Other situations need to modify manually.
+- run run_DCF.m to get result of specific dataset and get results.
+- run code novel_eval.m to visualize the result of novel disease evaluation. Results of fig 4(b) is given, you can modify  it for other situations likewise.
 
 # Data Available
 - You can download data from [Inductive matrix completion for predicting gene-disease associations](http://bigdata.ices.utexas.edu/project/gene-disease/ "IMC")
+
+- for more, you can contact with me, some files is too large to upload.
